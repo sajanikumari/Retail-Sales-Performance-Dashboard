@@ -1,24 +1,25 @@
-﻿# Retail Sales Performance Dashboard (Power BI)
+# Retail Sales Performance Dashboard
 
-## 📌 Project Overview
-This project presents an end-to-end Business Intelligence solution engineered to bridge the gap between high-level retail financial metrics and granular regional user behavior. The pipeline ingestion engine processes **5,000+ mock sales transactions** across distinct product cohorts, tracking moving profit margins and distribution efficiency.
+An interactive Power BI dashboard tracking retail sales performance across regions and time, built on a synthetically generated retail transactions dataset.
 
-## 🗄️ Repository Core Files
-- **`retail_sales_data_project.pbix`:** The core Power BI Desktop workspace containing data models and interactive visualizations.
-- **`Cleaned_Retail_Sales.xlsx`:** Preprocessed and deduplicated Excel transaction ledger driving the visual fields.
-- **`retail_sales_data.csv`:** Raw dataset output generated via custom Python scripting.
+## Objective
+Track revenue, profit margin, and regional/seasonal performance to identify which regions and periods are under- or over-performing.
 
-## 🛠️ Tech Stack & Tools
-- **Data Visualization & Modeling:** Power BI Desktop
-- **Data Preprocessing & Cleaning:** MS Excel
-- **Data Engineering / Mock Stream:** Python (Pandas, NumPy)
+## Tools
+Python (data generation), Excel / Power Query (cleaning), Power BI (DAX)
 
-## 🗃️ Data Pipeline & Cleaning Infrastructure
-- **Excel Ingestion Processing:** Structured the raw database entries to eliminate simulated duplicate records using native deduping tools, standardizing financial data types to establish high-integrity relationships.
-- **Dynamic BI Modeling:** Formulated calculated measures utilizing DAX (Data Analysis Expressions) to establish moving variables, including a dynamic **Profit Margin (%)** metric.
+## About the dataset
+The 5,000+ transaction dataset used here is **synthetically generated** (via `retail_data_generator.ipynb`) to simulate realistic retail sales patterns — it is not sourced from a real business. This was a deliberate choice to practice the full pipeline (generation → cleaning → analysis → dashboarding) end-to-end.
 
-## 📈 Executive Layout Specifications & UI/UX Design
-The canvas interface utilizes a modern, rounded-container grid layout divided into three strategic reporting hierarchies:
-1. **Executive KPI Header Hub:** High-level cards tracking Total Revenue, Total Net Profit, Distinct Order Volume, Average Revenue per Order, and Gross Profit Margins.
-2. **Time-Series & Category Funnels:** A smooth continuous line chart tracking monthly volatility paired with a structured vertical column breakdown to isolate the top 5 high-conversion product classes.
-3. **Regional Segmentation Analytics:** Horizontal matrix configurations displaying performance metrics across regional cohorts, backed by custom side-panel slicing controls for dynamic filtering.
+## What this project does
+
+### Data Cleaning (Power Query)
+- Removed duplicate records and standardized date/category fields
+- Created calculated columns for revenue and profit analysis
+
+### Dashboard (Power BI)
+- Built an interactive dashboard tracking revenue, profit margin, average order value, regional sales, and monthly growth trends
+- DAX measures for total sales, month-over-month growth, top product categories, and regional contribution
+
+## Key takeaway
+Identified top-performing regions and seasonal revenue dips in the simulated data, translating findings into example inventory and promotion recommendations.
